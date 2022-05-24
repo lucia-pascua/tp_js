@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./assets/js/functions.js"></script>
+    <title>tpjs</title>
+</head>
+<body>
+
+    <!--ej4, ej5, ej7, ej8, ej9, ej10-->
+    <h5>ejercicio 1</h5>
+    <p>Consigna: "Ingresar tres valores e indicar cual es el mayor y cual el menor."</p>
+    
+    <label for="ej1_c1">Numero 1:</label>
+    <input type="number" id="ej1_c1">
+    
+    <label for="ej1_c2">Numero 2:</label>
+    <input type="number" id="ej1_c2">
+
+    <label for="ej1_c3">Numero 3:</label>
+    <input type="number" id="ej1_c3">
+    
+    <button onclick="func_ej1()">Comparar</button>
+
+
+
+    <label for="ej1_resultado">Resultado:</label>
+    <input type="number" id="ej1_resultado">
+
+    <h5>ejercicio 2</h5>
+    <p>Consigna: "Ingresar dos valores, sumarlos y mostrar el resultado en un tercer input."</p>
+
+    <label for="ej2_c1">Numero 1:</label>
+    <input type="number" id="ej2_c1">
+    
+    <label for="ej2_c2">Numero 2:</label>
+    <input type="number" id="ej2_c2">
+    
+    <button onclick="func_ej2()">Sumar</button>
+
+    <label for="ej1_resultado">Resultado:</label>
+    <input type="number" id="ej2_resultado">
+
+    <h5>ejercicio 3</h5>
+    <p>Consigna: "Ingresar una palabra y un numero "n". Repetir la palabra "n" veces."</p>
+    
+    <label for="ej3_palabra">Palabra</label>
+    <input type="text" id="ej3_palabra">
+
+    <label for="ej3_num">Numero de repeticiones</label>
+    <input type="number" id="ej3_num" min="1">
+        
+    <button onclick="repetir()">Repetir</button>
+    
+    <div>
+        <label for="ej3_repeticion"></label>
+        <input type="text" id="ej3_repeticion">
+    </div>
+
+   <!-- <h5>ejercicio 4</h5>
+    <p>Consigna: "Realizar un conversor de temperatura: de grados centígrados a fahrenheit y viceversa. Deberá tener dos input y un botón."</p>
+    
+    <label for="ej4_centigrados">ingrese la temperatura en centigrados</label>
+    <input type="number" id="ej4_centigrados">
+
+    <button onclick="convertir">convertir</button>
+
+    <label for="ej4_fahrenheit">ingrese la temperatura en fahrenheit</label>
+    <input type="number" id="ej4_fahrenheit">
+
+    <script>
+        function convertir(){
+                let ej4_centigrados= document.getElementById("ej4_centigrados").value
+                let ej4_fahrenheit= document.getElementById("ej4_fahrenheit").value
+
+        if (ej4_centigrados > 0){
+                 ej4_fahrenheit = ej4_centigrados * 1.8 + 32
+                 document.getElementById("ej4_fahrenheit").value = ej4_fahrenheit
+             }
+        else{
+                 ej4_centigrados = (ej4_fahrenheit - 32) * 0.5556
+                 document.getElementById("ej4_centigrados").value = ej4_centigrados
+            }
+    }
+    </script>
+
+    <h5>ejercicio 5</h5>
+    <p>Consigna: "Ingresar una palabra y mostrar: 'PALABRA' tiene 'n' letras."</p>
+
+    <label for="ej5_palabra">ingrese una palabra</label>
+    <input type="text" id="ej5_palabra">
+
+    <button onclick="letras()">Contar</button>
+
+    <label for="ej5_letras"></label>
+    <input type="number" id="ej5_letras">
+   
+
+    <script>
+        function palabra(){
+            let ej5_palabra = (document.getElementById('ej5_palabra').value)
+        }
+
+        function letras() {
+            document.getElementById("ej5_letras").value = palabra().length;
+        }
+    </script>
+
+
+    <h5>ejercicio 6</h5>
+
+    <p>Consigna: "Ingresar un número e indicar si es par."</p>
+
+    <label for="ej6_num">Ingrese un numero</label>
+    <input type="number" id="ej6_num">
+
+    <button onclick="division()">Dividir</button>
+
+    <h5>ejercicio 7</h5>
+    <p>Consigna: "Ingresar dos números y mostrar los múltiplos de 3 comprendidos entre ambos."</p>
+    
+    <label for="ej7_num1">Ingrese el primer valor</label>
+    <input type="number" id="ej7_num1">
+
+    <label for="ej7_num2">Ingrese el segundo valor</label>
+    <input type="number" id="ej7_num2">
+
+    <button onclick="func_ej7">Mostrar multiplos de 3 entre ambos</button>
+
+    <script>
+        function func_ej7(){
+            let ej7_num1 = parseFloat (document.getElementById('ej7_num1').value)
+            let ej7_num2 = parseFloat (document.getElementById('ej7_num2').value)
+            
+
+        }    
+    </script>
+
+    <h5>ejercicio 8</h5>
+    <p>Consigna: "Mostrar los números primos hasta un número ingresado por el usuario.</p>
+
+    <label for="ej8_numero">Ingrese un numero</label>
+    <input type="number" id="ej_8numero">
+
+    <button onclick="ejercicio_8">Mostrar numeros primos hasta ese numero</button>
+
+    <script>
+        function ejercicio_8(){
+        var k = 2;
+        var i = document.getElementById("ej8_numero").value;
+        var NumeroPrimo = [];
+
+        for (; k < i; k++){
+            if (primo(k)){
+                NumeroPrimo.push(k);
+            }
+        }
+        
+        console.log(NumeroPrimo);
+    }
+        function primo(numero) {
+            for (var i = 2; i < numero; i++){
+                if (numero % i === 0) {
+                    return false
+                }
+            }
+
+            return numero !== 1;
+        }
+    </script>
+
+    <h5>ejercicio 9</h5>
+    <p>Consigna: "Ingresar un nombre, un apellido, una edad y un ciudad de nacimiento,  crear un párrafo y completar la siguiente frase:
+        "Mi nombre es NOMBRE APELLIDO, tengo EDAD años. Nací en la ciudad de CIUDAD.""</p>
+
+        <label for="ej9_nombre">ingrese su nombre</label>
+        <input type="text" id="ej9_nombre"> <br>
+
+        <label for="ej9_apellido">ingrese su apellido</label>
+        <input type="text" id="ej9_apellido"> <br>
+
+        <label for="ej9_edad">ingrese su edad</label>
+        <input type="number" id="ej9_edad"> <br>
+
+        <label for="ej9_ciudad">ingrese su ciudad de nacimiento</label>
+        <input type="text" id="ej9_ciudad"> <br>
+
+        <button onclick="ej9">crear párrafo</button>
+
+        <label for="ej9_parrafo"></label>
+        <input type="text" id="ej9_parrafo"> <br>
+
+        <script>
+
+            function ej9() {
+                var ej9_nombre = document.getElementById("ej9_nombre").value
+                var ej9_apellido = document.getElementById("ej9_apellido").value
+                var ej9_ciudad = document.getElementById("ej9_ciudad").value
+                var ej9_edad = document.getElementById("ej9_edad").value
+             
+                console.log('Mi nombre es ' + ej9_nombre + ej9_apellido +', tengo ' + ej9_edad + ' años. Nací en la ciudad de ' + ej9_ciudad)
+            }
+        </script>
+
+    <h5>ejercicio 10</h5> 
+    <p>Consigna: "Ingresar dos valores enteros y enumerar los elementos que los separan. 
+        Ejemplo 1: 2 y 6 -- > 3 , 4, 5
+        Ejemplo 2: 10 y 5 -- > 9, 8, 7, 6"</p>
+
+        <label for="ej10_num1">ingrese el primer numero</label>
+        <input type="number" id="ej10_num1">
+
+        <label for="ej10_num2">ingrese el segundo número</label>
+        <input type="number" id="ej10_num2">
+
+        <script>
+            function ej10(){
+            var ej10_num1 = []
+            var ej10_num2 = []
+
+            if (ej10_num1 > ej10_num2){
+                ej10_num1++
+            }
+            else{
+                ej10_num1--
+            }
+
+            }
+        </script> -->
+    </body>
+    </html>
