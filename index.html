@@ -59,55 +59,25 @@
         <input type="text" id="ej3_repeticion">
     </div>
 
-   <!-- <h5>ejercicio 4</h5>
+   <h5>ejercicio 4</h5>
     <p>Consigna: "Realizar un conversor de temperatura: de grados centígrados a fahrenheit y viceversa. Deberá tener dos input y un botón."</p>
     
-    <label for="ej4_centigrados">ingrese la temperatura en centigrados</label>
+    <label for="ej4_centigrados">centigrados</label>
     <input type="number" id="ej4_centigrados">
 
-    <button onclick="convertir">convertir</button>
+    <button onclick="convertir()">convertir</button>
 
-    <label for="ej4_fahrenheit">ingrese la temperatura en fahrenheit</label>
+    <label for="ej4_fahrenheit">fahrenheit</label>
     <input type="number" id="ej4_fahrenheit">
 
-    <script>
-        function convertir(){
-                let ej4_centigrados= document.getElementById("ej4_centigrados").value
-                let ej4_fahrenheit= document.getElementById("ej4_fahrenheit").value
 
-        if (ej4_centigrados > 0){
-                 ej4_fahrenheit = ej4_centigrados * 1.8 + 32
-                 document.getElementById("ej4_fahrenheit").value = ej4_fahrenheit
-             }
-        else{
-                 ej4_centigrados = (ej4_fahrenheit - 32) * 0.5556
-                 document.getElementById("ej4_centigrados").value = ej4_centigrados
-            }
-    }
-    </script>
-
-    <h5>ejercicio 5</h5>
+     <h5>ejercicio 5</h5>
     <p>Consigna: "Ingresar una palabra y mostrar: 'PALABRA' tiene 'n' letras."</p>
 
-    <label for="ej5_palabra">ingrese una palabra</label>
-    <input type="text" id="ej5_palabra">
+    <label for="contador"></label>
+    <input name="contador" id="contador" onpaste="contarcaracteres()" onkeyup="contarcaracteres();">
 
-    <button onclick="letras()">Contar</button>
-
-    <label for="ej5_letras"></label>
-    <input type="number" id="ej5_letras">
-   
-
-    <script>
-        function palabra(){
-            let ej5_palabra = (document.getElementById('ej5_palabra').value)
-        }
-
-        function letras() {
-            document.getElementById("ej5_letras").value = palabra().length;
-        }
-    </script>
-
+    <label id="ej5_res"></label>
 
     <h5>ejercicio 6</h5>
 
@@ -118,7 +88,10 @@
 
     <button onclick="division()">Dividir</button>
 
-    <h5>ejercicio 7</h5>
+    <label id="ej6_res"></label>
+
+
+    <!--<h5>ejercicio 7</h5><h6>no funciona</h6>
     <p>Consigna: "Ingresar dos números y mostrar los múltiplos de 3 comprendidos entre ambos."</p>
     
     <label for="ej7_num1">Ingrese el primer valor</label>
@@ -127,18 +100,33 @@
     <label for="ej7_num2">Ingrese el segundo valor</label>
     <input type="number" id="ej7_num2">
 
-    <button onclick="func_ej7">Mostrar multiplos de 3 entre ambos</button>
+    <button onclick="func_ej7">Mostrar multiplos de 3</button>
 
     <script>
         function func_ej7(){
-            let ej7_num1 = parseFloat (document.getElementById('ej7_num1').value)
-            let ej7_num2 = parseFloat (document.getElementById('ej7_num2').value)
-            
+            const ej7_num1 = document.getElementById("ej7_num1").value * 1;
+            const ej7_num2 = document.getElementById("ej7_num2").value * 1;
+            const ej7_res = document.getElementById("ej7_res");
+            ej7_res.textContent = ""
 
+            let menor = Math.min(ej7_num1, ej7_num2)
+            let mayor = Math.max(ej7_num1, ej7_num2)
+
+            while (menor <= mayor) {
+                let calculo = menor % 3;
+                if (calculo === 0){
+                    ej7_res.textContent = calculo, [];
+                }
+                menor++;
+            }
         }    
     </script>
 
-    <h5>ejercicio 8</h5>
+    <p id="ej7_res"></p>
+
+    <div>------------------------------------------------------------------------------------------------</div>
+    
+    <h5>ejercicio 8</h5><h6>no funciona</h6>
     <p>Consigna: "Mostrar los números primos hasta un número ingresado por el usuario.</p>
 
     <label for="ej8_numero">Ingrese un numero</label>
@@ -169,7 +157,8 @@
 
             return numero !== 1;
         }
-    </script>
+    </script> -->
+
 
     <h5>ejercicio 9</h5>
     <p>Consigna: "Ingresar un nombre, un apellido, una edad y un ciudad de nacimiento,  crear un párrafo y completar la siguiente frase:
@@ -187,24 +176,12 @@
         <label for="ej9_ciudad">ingrese su ciudad de nacimiento</label>
         <input type="text" id="ej9_ciudad"> <br>
 
-        <button onclick="ej9">crear párrafo</button>
+        <button onclick="ej9_func()">crear párrafo</button>
 
-        <label for="ej9_parrafo"></label>
-        <input type="text" id="ej9_parrafo"> <br>
+        <label id="ej9_res"></label>
+    
 
-        <script>
-
-            function ej9() {
-                var ej9_nombre = document.getElementById("ej9_nombre").value
-                var ej9_apellido = document.getElementById("ej9_apellido").value
-                var ej9_ciudad = document.getElementById("ej9_ciudad").value
-                var ej9_edad = document.getElementById("ej9_edad").value
-             
-                console.log('Mi nombre es ' + ej9_nombre + ej9_apellido +', tengo ' + ej9_edad + ' años. Nací en la ciudad de ' + ej9_ciudad)
-            }
-        </script>
-
-    <h5>ejercicio 10</h5> 
+   <!-- <h5>ejercicio 10</h5> <h6>no funciona</h6>
     <p>Consigna: "Ingresar dos valores enteros y enumerar los elementos que los separan. 
         Ejemplo 1: 2 y 6 -- > 3 , 4, 5
         Ejemplo 2: 10 y 5 -- > 9, 8, 7, 6"</p>
@@ -215,19 +192,29 @@
         <label for="ej10_num2">ingrese el segundo número</label>
         <input type="number" id="ej10_num2">
 
+        <button onclick="ej10()">mostrar numeros</button>
+
         <script>
             function ej10(){
-            var ej10_num1 = []
-            var ej10_num2 = []
+                var ej10_num1 = document.getElementById("ej10_num1").value
+                var ej10_num2 = document.getElementById("ej10_num2").value
+                var ej10_res;
 
-            if (ej10_num1 > ej10_num2){
-                ej10_num1++
-            }
-            else{
-                ej10_num1--
-            }
+                while (ej10_num1 =! ej10_num2) {
+                    if (ej10_num1 > ej10_num2){
 
+                        ej10_res = ej10_num1 , ej10_num1++ 
+                    }
+                    else{
+                        ej10_res = ej10_num1 , ej10_num1--
+                    }
+                }
+
+                document.getElementById('ej10_res').innerHTML = "Los números son: " + ej10_res;
             }
-        </script> -->
+        </script>
+
+        <label id="ej10_res"></label>-->
+
     </body>
     </html>

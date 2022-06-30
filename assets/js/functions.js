@@ -33,14 +33,47 @@ function repetir(){
     document.getElementById("ej3_repeticion").value = frase
 }
 
+
+function convertir(){
+    let ej4_centigrados= parseFloat (document.getElementById("ej4_centigrados").value)
+    let ej4_fahrenheit= parseFloat (document.getElementById("ej4_fahrenheit").value)
+    
+    if (ej4_centigrados > 0){
+
+         ej4_fahrenheit = ej4_centigrados * 1.8 + 32
+         document.getElementById("ej4_fahrenheit").value = ej4_fahrenheit
+     }
+
+    if (ej4_fahrenheit > 0){
+         ej4_centigrados = (ej4_fahrenheit - 32) * 0.5556
+         document.getElementById("ej4_centigrados").value = ej4_centigrados
+    }
+}
+
+function contarcaracteres(){
+
+    var valor=document.getElementById('contador');
+    var respuesta=document.getElementById('ej5_res');
+    var cantidad=valor.value.length;
+    document.getElementById('ej5_res').innerHTML = "tiene " + cantidad + " letras";
+};
+
 function division(){
     let ej6_num = parseFloat(document.getElementById("ej6_num").value)
 
-if(ej6_num%2==0){
-
-document.write("Ej6; El número "+ej6_num+" es par");
+     if(ej6_num%2==0){
+        document.getElementById('ej6_res').innerHTML = "el numero es par";
+     }
+    else{
+        document.getElementById('ej6_res').innerHTML = "el numero es impar"; 
+    }
 }
-else{
-document.write("Ej6; El número "+ej6_num+" es impar"); 
-  }
+
+function ej9_func() {
+    var ej9_nombre = document.getElementById("ej9_nombre").value;
+    var ej9_apellido = document.getElementById("ej9_apellido").value;
+    var ej9_ciudad = document.getElementById("ej9_ciudad").value;
+    var ej9_edad = document.getElementById("ej9_edad").value;
+ 
+    document.getElementById('ej9_res').innerHTML = 'Mi nombre es ' + ej9_nombre + " " + ej9_apellido +', tengo ' + ej9_edad + ' años. Nací en la ciudad de ' + ej9_ciudad
 }
