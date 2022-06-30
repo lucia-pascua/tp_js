@@ -9,7 +9,6 @@
 </head>
 <body>
 
-    <!--ej4, ej5, ej7, ej8, ej9, ej10-->
     <h5>ejercicio 1</h5>
     <p>Consigna: "Ingresar tres valores e indicar cual es el mayor y cual el menor."</p>
     
@@ -90,76 +89,6 @@
 
     <label id="ej6_res"></label>
 
-
-    <!--<h5>ejercicio 7</h5><h6>no funciona</h6>
-    <p>Consigna: "Ingresar dos números y mostrar los múltiplos de 3 comprendidos entre ambos."</p>
-    
-    <label for="ej7_num1">Ingrese el primer valor</label>
-    <input type="number" id="ej7_num1">
-
-    <label for="ej7_num2">Ingrese el segundo valor</label>
-    <input type="number" id="ej7_num2">
-
-    <button onclick="func_ej7">Mostrar multiplos de 3</button>
-
-    <script>
-        function func_ej7(){
-            const ej7_num1 = document.getElementById("ej7_num1").value * 1;
-            const ej7_num2 = document.getElementById("ej7_num2").value * 1;
-            const ej7_res = document.getElementById("ej7_res");
-            ej7_res.textContent = ""
-
-            let menor = Math.min(ej7_num1, ej7_num2)
-            let mayor = Math.max(ej7_num1, ej7_num2)
-
-            while (menor <= mayor) {
-                let calculo = menor % 3;
-                if (calculo === 0){
-                    ej7_res.textContent = calculo, [];
-                }
-                menor++;
-            }
-        }    
-    </script>
-
-    <p id="ej7_res"></p>
-
-    <div>------------------------------------------------------------------------------------------------</div>
-    
-    <h5>ejercicio 8</h5><h6>no funciona</h6>
-    <p>Consigna: "Mostrar los números primos hasta un número ingresado por el usuario.</p>
-
-    <label for="ej8_numero">Ingrese un numero</label>
-    <input type="number" id="ej_8numero">
-
-    <button onclick="ejercicio_8">Mostrar numeros primos hasta ese numero</button>
-
-    <script>
-        function ejercicio_8(){
-        var k = 2;
-        var i = document.getElementById("ej8_numero").value;
-        var NumeroPrimo = [];
-
-        for (; k < i; k++){
-            if (primo(k)){
-                NumeroPrimo.push(k);
-            }
-        }
-        
-        console.log(NumeroPrimo);
-    }
-        function primo(numero) {
-            for (var i = 2; i < numero; i++){
-                if (numero % i === 0) {
-                    return false
-                }
-            }
-
-            return numero !== 1;
-        }
-    </script> -->
-
-
     <h5>ejercicio 9</h5>
     <p>Consigna: "Ingresar un nombre, un apellido, una edad y un ciudad de nacimiento,  crear un párrafo y completar la siguiente frase:
         "Mi nombre es NOMBRE APELLIDO, tengo EDAD años. Nací en la ciudad de CIUDAD.""</p>
@@ -179,42 +108,6 @@
         <button onclick="ej9_func()">crear párrafo</button>
 
         <label id="ej9_res"></label>
-    
-
-   <!-- <h5>ejercicio 10</h5> <h6>no funciona</h6>
-    <p>Consigna: "Ingresar dos valores enteros y enumerar los elementos que los separan. 
-        Ejemplo 1: 2 y 6 -- > 3 , 4, 5
-        Ejemplo 2: 10 y 5 -- > 9, 8, 7, 6"</p>
-
-        <label for="ej10_num1">ingrese el primer numero</label>
-        <input type="number" id="ej10_num1">
-
-        <label for="ej10_num2">ingrese el segundo número</label>
-        <input type="number" id="ej10_num2">
-
-        <button onclick="ej10()">mostrar numeros</button>
-
-        <script>
-            function ej10(){
-                var ej10_num1 = document.getElementById("ej10_num1").value
-                var ej10_num2 = document.getElementById("ej10_num2").value
-                var ej10_res;
-
-                while (ej10_num1 =! ej10_num2) {
-                    if (ej10_num1 > ej10_num2){
-
-                        ej10_res = ej10_num1 , ej10_num1++ 
-                    }
-                    else{
-                        ej10_res = ej10_num1 , ej10_num1--
-                    }
-                }
-
-                document.getElementById('ej10_res').innerHTML = "Los números son: " + ej10_res;
-            }
-        </script>
-
-        <label id="ej10_res"></label>-->
 
     </body>
     </html>
