@@ -69,6 +69,40 @@ function division(){
     }
 }
 
+function func_ej8(){
+    let ej8_num = parseFloat(document.getElementById("ej8_num").value);
+
+    function esPrimo(numero){
+        
+        let divisores = 0;
+        
+        for(let i=2; i <= numero; i++) {        
+            if(numero % i === 0) {
+            divisores += 1;                    
+            }
+        }
+    
+        if(divisores===1){
+            console.log(numero + " es primo")
+        return true
+        }else{
+            console.log(numero + " no es primo")
+        return false
+        }
+    }
+
+    let Primo = [];
+
+    for(let i=0; i <= ej8_num; i++){
+        console.log("i es " + i)
+    if (esPrimo(i)){
+        Primo.push(i);
+        }
+    }
+
+    document.getElementById("ej8_res").value = Primo.toString();
+}
+
 function ej9_func() {
     var ej9_nombre = document.getElementById("ej9_nombre").value;
     var ej9_apellido = document.getElementById("ej9_apellido").value;
@@ -76,4 +110,30 @@ function ej9_func() {
     var ej9_edad = document.getElementById("ej9_edad").value;
  
     document.getElementById('ej9_res').innerHTML = 'Mi nombre es ' + ej9_nombre + " " + ej9_apellido +', tengo ' + ej9_edad + ' años. Nací en la ciudad de ' + ej9_ciudad
+}
+
+function ej10(){
+    var ej10_num1 = parseInt(document.getElementById("ej10_num1").value)
+    var ej10_num2 = parseInt(document.getElementById("ej10_num2").value)
+    var ej10_res = ""
+
+    if (ej10_num1 > ej10_num2) {
+      
+      for (let index = ej10_num1 - 1; index > ej10_num2 ; index--) {
+                        
+          ej10_res = ej10_res + index + ", ";
+      }
+  
+          document.getElementById("ej10_res").value = ej10_res
+      } 
+          
+  
+      if (ej10_num2 > ej10_num1){
+          
+      for (let index = ej10_num1 + 1; ej10_num2 > index ; index++) {
+                        
+        ej10_res = ej10_res + index + ", ";;
+      }
+          document.getElementById("ej10_res").value = ej10_res
+      }
 }

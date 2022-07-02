@@ -98,40 +98,50 @@
     <label for="ej7_num2">Ingrese el segundo valor</label>
     <input type="number" id="ej7_num2">
 
-    <button onclick="func_ej7">Mostrar multiplos de 3</button>
+    <button onclick="func_ej7()">Mostrar multiplos de 3</button>
 
     <script>
         function func_ej7(){
-        
-            var ej7_num1 = parseInt(document.getElementById('ej7_num1').value);
-            var ej7_num2 = parseInt(document.getElementById('ej7_num2').value);
             
-            var multiplos;
-            var comparten = true;
-            var mult = 3;
-            var mod1, mod2;
+            const num1 = document.getElementById("ej7_num1").value * 1;
+            const num2 = document.getElementById("ej7_num2").value * 1
+            var i;
             
-            while (mult <= ej7_num1 && mult <= ej7_num2 && comparten == true) {
-            
-                mod1 = ej7_num1 % mult
-                mod2 = ej7_num2 % mult
-            
-            if (mod1 === mod2){
-            
-                multiplos = multiplos + mult + ", "
-                mult = mult + 3
-            
-            }else {
-                comparten = false 
-                } 
-            }
-            document.getElementById("ej7_res").value = multiplos
-            
-        }    
+
+            let menor = Math.min(num1, num2);
+            let mayor = Math.max(num1, num2);
+            let res = []
+
+            while (menor <= mayor) {
+                let calculo = menor % 3;
+                if (calculo === 0) {
+                    for(let i=0; i <= mayor; i++){
+                        console.log("i es " + i)
+                        if (res(i)){
+                            res.push(i);
+                        }
+                    }
+                }
+            };
+
+            document.getElementById("ej7_res").value = res.toString();
+        };
     </script>
 
     <label for="ej7_res">Multiplos:</label>
     <input type="text" id="ej7_res">
+
+
+    <h5>ejercicio 8</h5>
+    <p>Consigna: "Mostrar los números primos hasta un número ingresado por el usuario.</p>
+
+    <label for="ej8_num">Ingrese un numero</label>
+    <input type="number" id="ej8_num">
+
+    <button onclick="func_ej8()">mostrar numeros</button>
+
+    <label for="ej8_res"></label>
+    <input type="text" id="ej8_res">
 
 
     <h5>ejercicio 9</h5>
